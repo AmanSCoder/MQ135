@@ -1,4 +1,4 @@
-# **MQ135**
+# **MQ135 Library**
 ## **Introduction**
 
 MQ135 is a stable, low-electrochemical gas sensor that uses SnO2 as a sensitive material. When the pollution gas comes in contact, a chemical reaction takes place and the sensor's conductivity gets higher. This change in resistance is used to calculate the gas concentration. The MQ series of gas sensors use a small heater inside with an electrochemical sensor and are usually used indoors at room temperature. Their calibration preferably requires a known concentration of the measured gas. The datasheet claims that the MQ135 is suitable for CO2, Alcohol, Benzene, NOx, and NH3.
@@ -96,11 +96,10 @@ These corrected values are returned by the `getCorrectedResistance(t,h)`, `getGa
 These temperature and humidity values have to be read by some other sensor like DHT11.
 
 ## **Procedure to calculate scaling (a) and exponential factors (b):**
----
 
 First, we need to collect values from the sensitivity curve provided in the datasheet.
 
-*WebPlotDigitizer* is the tool we are going to use here: <https://apps.automeris.io/wpd/>
+[*WebPlotDigitizer*](https://apps.automeris.io/wpd/) is the tool we are going to use here:
 
 1) Load the image of the graph into the website. 
 1) Choose plot type as 2D(X-Y) plot 
@@ -109,7 +108,7 @@ First, we need to collect values from the sensitivity curve provided in the data
 1) Then add atleast 10 points on the line of the particular gas whose factors are needed to be calculated. 
 1) Go to ‘view data’.
 1) Now you will get the coordinates of those points for a particular gas. 
-1) Now use this website to fit the data points into the power regression and generate the scaling and exponential factor-<https://www.statology.org/power-regression-calculator/>
+1) Now use [this website](https://www.statology.org/power-regression-calculator/) to fit the data points into the power regression and generate the scaling and exponential factor.
 
 These obtained values for each gas are used to calculate PPM concentrations.
 
